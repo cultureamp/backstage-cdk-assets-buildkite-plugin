@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+function main(){
+  destination="./ops/.backstage"
+
+  rm -rf ${destination}
+  mkdir -p ${destination}
+  cp catalog-info*.y*ml ${destination}
+}
+
+main "$@"

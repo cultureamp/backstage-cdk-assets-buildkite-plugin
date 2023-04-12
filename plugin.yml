@@ -1,0 +1,5 @@
+name: Backstage CDK Assets
+description: Copies Backstage catalog-info.yaml files into the CDK application prior to building
+author: https://github.com/cultureamp
+configuration:
+  additionalProperties: false
