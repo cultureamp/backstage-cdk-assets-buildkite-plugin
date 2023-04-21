@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-function main(){
-  destination="./ops/.backstage"
+DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
-  rm -rf ${destination}
-  mkdir -p ${destination}
-  cp catalog-info*.y*ml ${destination}
+# shellcheck source=lib/shared.bash
+. "$DIR/../lib/shared.bash"
+
+function main(){
+  local dest; dest="$(plugin_read_config "DEST" "./ops")"
+  dest="${dest}/.backstage"
+
+  rm -rf ${dest}
+  mkdir -p ${dest}
+  cp catalog-info*.y*ml ${dest}
 }
 
 main "$@"
