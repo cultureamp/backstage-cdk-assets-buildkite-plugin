@@ -16,13 +16,13 @@ steps:
       config: docker-compose.ci.yml
 ```
 
-By default the assume your CDK project is at `ops` and the plugin will copy Backstage files into a `.backstage` directory with. Configure the destination path with `dest` parameter:
+By default the plugin assumes your CDK project is at `ops` and will copy Backstage files into a `.backstage` directory within. Configure the destination path with `dest` parameter:
 
 ```yaml
 steps:
 - plugins:
   - cultureamp/backstage-cdk-assets#v1.0.0:
-      dest: ops/cdk     # assets copies into ./ops/cdk/.backstage
+      dest: ops/cdk     # assets copied into ./ops/cdk/.backstage
   - docker-compose#v3.8.0:
       build: cdk
       config: docker-compose.ci.yml
