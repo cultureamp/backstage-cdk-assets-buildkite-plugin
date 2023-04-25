@@ -27,3 +27,17 @@ steps:
       build: cdk
       config: docker-compose.ci.yml
 ```
+
+## Developing
+
+To run the tests:
+
+```sh
+docker-compose run --rm tests
+```
+
+To run linting:
+
+```sh
+docker-compose run --rm lint
+```
