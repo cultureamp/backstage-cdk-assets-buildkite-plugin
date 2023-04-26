@@ -3,5 +3,7 @@ description: Copies Backstage catalog-info.yaml files into the CDK application p
 author: https://github.com/cultureamp
 requirements: []
 configuration:
-  properties: {}
+  properties:
+    dest:
+      type: string
   additionalProperties: false
