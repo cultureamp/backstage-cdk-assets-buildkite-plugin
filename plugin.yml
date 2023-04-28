@@ -1,9 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/buildkite-plugins/buildkite-plugin-linter/master/lib/plugin-yaml-schema.yml
 name: Backstage CDK Assets
 description: Copies Backstage catalog-info.yaml files into the CDK application prior to building
 author: https://github.com/cultureamp
 requirements: []
 configuration:
   properties:
+    source:
+      type: string
     dest:
       type: string
   additionalProperties: false

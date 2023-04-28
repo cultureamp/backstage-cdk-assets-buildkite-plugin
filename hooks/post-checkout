@@ -7,12 +7,29 @@ DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 . "$DIR/../lib/shared.bash"
 
 function main(){
+  local source; source="$(plugin_read_config "SOURCE" "./")"
   local dest; dest="$(plugin_read_config "DEST" "./ops")"
-  dest="${dest}/.backstage"
 
-  rm -rf ${dest}
-  mkdir -p ${dest}
-  cp catalog-info*.y*ml ${dest}
+  source="$(cleanPath "${source}")catalog-info*.y*ml"
+  dest="$(cleanPath "${dest}").backstage"
+
+  rm -rf "${dest}"
+  mkdir -p "${dest}"
+  cp "${source}" "${dest}"
+}
+
+function cleanPath() {
+  local dir=$1
+
+  if [[ "${dir}" != ./* ]]; then
+    dir="./${dir}"
+  fi
+
+  if [[ "${dir}" != */ ]]; then
+    dir="${dir}/"
+  fi
+
+  echo "${dir}"
 }
 
 main "$@"
