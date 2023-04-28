@@ -10,18 +10,21 @@ Add the `cultureamp/backstage-cdk-assets` plugin to your existing CDK build step
 ```yaml
 steps:
 - plugins:
-  - cultureamp/backstage-cdk-assets#v1.0.0:
+  - cultureamp/backstage-cdk-assets#v1.1.0:
   - docker-compose#v3.8.0:
       build: cdk
       config: docker-compose.ci.yml
 ```
 
-By default the plugin assumes your CDK project is at `ops` and will copy Backstage files into a `.backstage` directory within. Configure the destination path with `dest` parameter:
+By default the plugin assumes your CDK project is at `ops` and will copy
+Backstage files into a `.backstage` directory within. Configure the source and
+destination paths with the `source` and `dest` parameters respectively:
 
 ```yaml
 steps:
 - plugins:
-  - cultureamp/backstage-cdk-assets#v1.0.0:
+  - cultureamp/backstage-cdk-assets#v1.1.0:
+      source: asset     # assets copied from ./asset
       dest: ops/cdk     # assets copied into ./ops/cdk/.backstage
   - docker-compose#v3.8.0:
       build: cdk
