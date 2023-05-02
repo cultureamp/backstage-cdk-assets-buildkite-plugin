@@ -15,7 +15,7 @@ function main(){
 
   rm -rf "${dest}"
   mkdir -p "${dest}"
-  cp "${source}" "${dest}"
+  cp ${source} ${dest}
 }
 
 function cleanPath() {
