@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-cdk-assets-buildkite-plugin
+  description: >-
+    Buildkite plugin with a post-checkout hook that copies Backstage
+    catalog-info.yaml files into a service's ops CDK directory before it is
+    built into a Docker image.
+  links:
+    - title: Source
+      url: https://github.com/cultureamp/backstage-cdk-assets-buildkite-plugin
+  tags:
+    - asset-criticality-moderate # TODO confirm: used in service CDK build steps
+    - camp-sre
+    - data-classification-none
+  annotations:
+    github.com/project-slug: cultureamp/backstage-cdk-assets-buildkite-plugin
+    github.com/team-slug: cultureamp/sre-enablement
+spec:
+  type: library
+  lifecycle: production
+  owner: sre-enablement
